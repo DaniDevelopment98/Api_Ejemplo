@@ -20,7 +20,10 @@ namespace api_Ejemplo.Controllers
         {
             _context = context;
         }
-
+        /// <summary>
+        ///    Obten los valores que hay en la tabla Clientes 
+        /// </summary>
+        /// <returns></returns>
         // GET: api/Clientes
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Clientes>>> GetClientes()
@@ -28,7 +31,11 @@ namespace api_Ejemplo.Controllers
 
             return await _context.Clientes.ToListAsync();
         }
-
+/// <summary>
+        ///    Obten los valores que hay en la tabla Clientes 
+        /// </summary>
+        /// <returns></returns>
+        // GET: api/Clientes
         // GET: api/Clientes/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Clientes>> GetClientes(int id)
@@ -42,7 +49,12 @@ namespace api_Ejemplo.Controllers
 
             return clientes;
         }
-
+        /// <summary>
+        /// Edita un cliente de la base de datos, donde existen dos parametros de seleccion
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="clientes"></param>
+        /// <returns></returns>
         // PUT: api/Clientes/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
@@ -74,7 +86,11 @@ namespace api_Ejemplo.Controllers
 
             return NoContent();
         }
-
+        /// <summary>
+        /// Agrega un cliente a la Base de Datos
+        /// </summary>
+        /// <param name="clientes"></param>
+        /// <returns></returns>
         // POST: api/Clientes
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
@@ -86,7 +102,11 @@ namespace api_Ejemplo.Controllers
 
             return CreatedAtAction("GetClientes", new { id = clientes.idCliente }, clientes);
         }
-
+        /// <summary>
+        /// Elimina un registro de la base de datos
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         // DELETE: api/Clientes/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Clientes>> DeleteClientes(int id)
@@ -109,3 +129,4 @@ namespace api_Ejemplo.Controllers
         }
     }
 }
+
